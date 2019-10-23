@@ -11,7 +11,10 @@ fi
 if [! -d $VIRTUALENV]; then
     virtualenv $VIRTUALENV
 fi
-cp .env.example .env
+if [ ! -f .env ]; then
+    cp .env.example .env
+    refresh
+fi
 source $VIRTUALENV/bin/activate
 pip install -r requirements.txt
 python app.py 
