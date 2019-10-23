@@ -44,7 +44,12 @@ def add_compliment():
     receiver = request.values.get('receiver', 'Someone')
     compliment = request.values.get('compliment', 'wonderful')
     to = request.values.get('to')
-    body = f'{sender} says: {receiver} is {compliment}. See more compliments at {request.url_root}'
+    body = '{sender} says: {receiver} is {compliment}. See more compliments at {url}'.format(
+        sender=sender,
+        receiver=receiver,
+        compliment=compliment,
+        url=request.url_root
+    )
     send_message(to, body)
     flash('Your message was successfully sent')
     return redirect(url_for('index'))
