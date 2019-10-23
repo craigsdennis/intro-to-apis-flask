@@ -1,0 +1,198 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/***********************************
+MAIN CSS
+************************************/
+body {
+ font-family: 'Rubik', sans-serif;
+ background-color: #3498db;
+ color: rgba(0, 0, 0, .88);
+ line-height: 1.5;
+ display: flex;
+ align-items: center;
+ height: 100vh;
+ letter-spacing: .25px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+ text-transform: uppercase;
+ color: #20325C;
+}
+
+h1 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 900;
+  font-size: 2em;
+  color: #3498db;
+  margin-top: .25em;
+}
+
+h2 {
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2.5px;
+  font-size: 1em;
+  margin-top: .5em;
+}
+
+.container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.content {
+  flex-grow: 2;
+  margin: .5em 2em 0 2em;
+  border-bottom: #bdc3c7 solid 1px;
+  overflow-y: scroll;
+}
+
+.content li {
+	margin: .38em 0;
+}
+
+.main-form {
+  display: flex;
+  flex-flow: column;
+	width: 90%;
+  margin: .5em 2em 0 2em;
+}
+
+.form-row {
+  display: flex;
+	flex-flow: column;
+  justify-content: space-between;
+  align-items: bottom;
+  margin: .75em 0;
+}
+
+.form-row label {
+  font-size: .75em;
+	margin-top: .75em;
+}
+
+.main-form input {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  background-color: transparent;
+  padding-top: .5em;
+  border-style: none none solid none;
+  border-color: #555;
+  outline: none;
+  font-size: 1.25em;
+  line-height: 2em;
+	border-radius: 0;
+}
+
+.float-text {
+  display: flex;
+	margin: .5em 0 2em 0;
+  line-height: 2em;
+}
+
+.compliment-button {
+  height: 4em;
+  width: 100%;
+  margin: .5em 0 -.1em 0;
+  font-size: 1.25em;
+  border-style: none;
+  background-color: #F25749;
+  color: #fff;
+}
+
+.compliment-button:hover {
+  background-color: #c0392b;
+}
+
+.compliment-button:active {
+  padding: 8px 13px 6px;
+}
+
+@media(min-width: 48rem) {
+	h1 {
+		font-size: 3em;
+	}
+
+	.container {
+	  width: 35vw;
+	  height: 90vh;
+		box-shadow: 5px 5px 4px 1px rgba(52,73,94,0.75);
+		border-radius: .5em;
+		margin: 0 auto;
+	}
+
+	.form-row {
+		flex-flow: row;
+	}
+
+	.form-row label {
+	  width: 45%;
+	  font-size: .75em;
+	}
+
+	.compliment-button {
+		height: 2.5em;
+		border-radius: 0 0 .5em .5em;
+	}
+
+	.float-text {
+		margin: 0;
+	}
+
+	.form-row label {
+		margin-top: 0;
+	}
+}

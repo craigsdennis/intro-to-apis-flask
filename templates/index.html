@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Complimentr</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/main.css') }}">
+    </head>
+<body>
+<div id="app" class="container">
+
+<h1>Complimentr</h1>
+{% for flash_message in get_flashed_messages() %}
+    <div class="flash">{{ flash_message }}</div>
+{% endfor %}
+
+<h2> Recent Compliments </h2>
+<div class="content">
+    {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li>{{ message.body }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+
+<h2> Send a compliment </h2>
+<form method="post" action="/add-compliment" class="main-form" id="compliment-form">
+    <div class="form-row">
+      <label for="to">
+        Number to compliment
+        <input type="tel" placeholder="+15550123456" name="to" />
+      </label>
+      <label for="sender">
+        Your Name
+        <input type="text" placeholder="Jane" name="sender"  />
+      </label>
+    </div>
+    <div class="form-row">
+      <label for="receiver">
+        Person to compliment
+        <input type="text" placeholder="Sally" name="receiver" />
+      </label>
+      <span class="float-text">is</span>
+      <label for="compliment">
+        Your compliment
+        <input type="text" placeholder="an amazing person!" name="compliment" />
+      </label>
+    </div>
+</form>
+<button
+  form="compliment-form"
+  class="compliment-button"
+>
+  Send compliment
+</button>
+
+
+
+
+</div>
+</body>
+</html>
