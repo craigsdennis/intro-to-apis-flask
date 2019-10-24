@@ -8,7 +8,7 @@ if [ ! -f $ROOT_ENV/bin/pip ]; then
   curl --silent --show-error --retry 5 https://bootstrap.pypa.io/get-pip.py | $ROOT_ENV/bin/python
   $ROOT_ENV/bin/pip install virtualenv
 fi
-if [! -d $VIRTUALENV]; then
+if [ ! -d $VIRTUALENV ]; then
     virtualenv $VIRTUALENV
 fi
 if [ ! -f .env ]; then
@@ -16,5 +16,6 @@ if [ ! -f .env ]; then
     refresh
 fi
 source $VIRTUALENV/bin/activate
+echo "Activated virtualenv Python is `which python`"
 pip install -r requirements.txt
 python app.py 

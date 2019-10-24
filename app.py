@@ -44,3 +44,6 @@ def add_compliment():
     send_message(to, body)
     flash('Your message was successfully sent')
     return redirect(url_for('index'))
+
+if __name__ == '__main__':
+    app.run()
