@@ -9,7 +9,7 @@ if [ ! -f $ROOT_ENV/bin/pip ]; then
   $ROOT_ENV/bin/pip install virtualenv
 fi
 if [ ! -d $VIRTUALENV ]; then
-    virtualenv $VIRTUALENV
+    $ROOT_ENV/bin/virtualenv $VIRTUALENV
 fi
 if [ ! -f .env ]; then
     cp .env.example .env
